@@ -2,16 +2,20 @@
 from flask import Flask,request,jsonify
 from db import docDB
 import os
+from flask.ext.cors import CORS, cross_origin
 
 
 
 app = Flask(__name__)
 
+cors = CORS(app, resources={r"/foo": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 #############################################
 @app.route('/<string:arg>',methods = ['GET'])
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def get_Api_search(arg):
+ 
     data = docDB()
 
     false = [{"email" : False}]
