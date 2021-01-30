@@ -12,7 +12,7 @@ app = Flask(__name__)
 def get_Api_search(arg):
     data = docDB()
 
-    false = [{"cert" : False}]
+    false = [{"email" : False}]
     search = [i for i in data if i["email"] == arg ]
     if(len(search)==0):
         return jsonify(false)
