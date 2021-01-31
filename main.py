@@ -14,7 +14,7 @@ CORS(app)
 def get_Api_search(arg):
     data = docDB()
 
-    false = [{"cert" : False}]
+    false = [{"status" : 4001}]
     search = [i for i in data if i["email"] == arg ]
     if(len(search)==0):
         return jsonify(false)
