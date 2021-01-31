@@ -17,10 +17,10 @@ def get_Api_search(arg):
     false = [{"status" : False}]
     search = [i for i in data if i["email"] == arg ]
     if(len(search)==0):
-        return jsonify(false)
+        return jsonify(false[0])
 
 
-    return jsonify(search)
+    return jsonify(search[0])
 
 
 
