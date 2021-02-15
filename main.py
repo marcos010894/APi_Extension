@@ -20,7 +20,7 @@ def get_Api_search(arg):
         return jsonify(false)
 
 
-    return jsonify(search)
+    return jsonify(search[0])
 
 
 
