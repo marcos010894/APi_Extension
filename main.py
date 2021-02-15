@@ -1,7 +1,6 @@
  # -*- coding: utf-8 -*-
 from flask import Flask,request,jsonify
 from flask_cors import CORS
-from db import docDB
 import os
 
 
@@ -12,15 +11,10 @@ CORS(app)
 #############################################
 @app.route('/<string:arg>',methods = ['GET'])
 def get_Api_search(arg):
-    data = docDB()
 
-    false = [{"status" : False}]
-    search = [i for i in data if i["email"] == arg ]
-    if(len(search)==0):
-        return jsonify(false)
-
-
-    return jsonify(search[0])
+    false = [{"pago" : True}]
+  
+    return jsonify(false[0])
 
 
 
